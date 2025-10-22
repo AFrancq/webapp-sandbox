@@ -46,17 +46,14 @@ export default function TypingAnimation() {
   }, [currentText, isDeleting, currentWordIndex, typingSpeed, words]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800">
-      <div className="text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-          RE: Search
-          <div className="text-blue-400">
-            {currentText}
-            <span className="animate-pulse">|</span>
-          </div>
-        </h1>
-        <p className="text-gray-400 text-lg">Know where you're going</p>
+    <h1 className="text-5xl md:text-7xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+      <div className='justify-center flex'>
+        RE: Search
       </div>
-    </div>
+      <div style={{ color: 'var(--accent)' }}>
+        {currentText}
+        <span className="animate-pulse">|</span>
+      </div>
+    </h1>
   );
 }
