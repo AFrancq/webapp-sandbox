@@ -21,24 +21,6 @@
   --text-emphasis: #fbbf24;  /* yellow-400 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  
-  /* Custom color classes */
-  --color-brand-primary: var(--primary);
-  --color-brand-primary-dark: var(--primary-dark);
-  --color-brand-accent: var(--accent);
-  --color-surface-dark: var(--surface-dark);
-  --color-surface-medium: var(--surface-medium);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-text-muted: var(--text-muted);
-  --color-text-emphasis: var(--text-emphasis);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -52,17 +34,37 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Utility classes for consistent colors */
-.bg-brand-primary { background-color: var(--primary); }
-.bg-brand-primary-dark { background-color: var(--primary-dark); }
-.bg-surface-dark { background-color: var(--surface-dark); }
-.bg-surface-medium { background-color: var(--surface-medium); }
+/* Utility classes for consistent colors - using !important to override Tailwind */
+.bg-brand-primary { 
+  background-color: var(--primary) !important; 
+}
+.bg-brand-primary-dark { 
+  background-color: var(--primary-dark) !important; 
+}
+.bg-surface-dark { 
+  background-color: var(--surface-dark) !important; 
+}
+.bg-surface-medium { 
+  background-color: var(--surface-medium) !important; 
+}
 
-.text-brand-accent { color: var(--accent); }
-.text-primary { color: var(--text-primary); }
-.text-secondary { color: var(--text-secondary); }
-.text-muted { color: var(--text-muted); }
-.text-emphasis { color: var(--text-emphasis); }
+.text-brand-accent { 
+  color: var(--accent) !important; 
+}
+.text-primary { 
+  color: var(--text-primary) !important; 
+}
+.text-secondary { 
+  color: var(--text-secondary) !important; 
+}
+.text-muted { 
+  color: var(--text-muted) !important; 
+}
+.text-emphasis { 
+  color: var(--text-emphasis) !important; 
+}
 
 /* Hover states */
-.hover\:bg-brand-primary-dark:hover { background-color: var(--primary-dark); }
+.hover\:bg-brand-primary-dark:hover { 
+  background-color: var(--primary-dark) !important; 
+}
