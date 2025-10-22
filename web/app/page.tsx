@@ -5,7 +5,7 @@ import SlideButton from '@/components/slide-button';
 
 export default function Home() {
   return (
-    <div style={{ background: 'linear-gradient(to bottom right, var(--surface-dark), var(--surface-medium))' }}>
+    <div className="bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="min-h-screen flex flex-col items-center justify-center gap-8">
         <div>
           <TypingAnimation />

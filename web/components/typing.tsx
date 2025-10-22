@@ -46,11 +46,11 @@ export default function TypingAnimation() {
   }, [currentText, isDeleting, currentWordIndex, typingSpeed, words]);
 
   return (
-    <h1 className="text-5xl md:text-7xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+    <h1 className="text-5xl md:text-7xl font-bold text-primary mb-4">
       <div className='justify-center flex'>
         RE: Search
       </div>
-      <div style={{ color: 'var(--accent)' }}>
+      <div className="text-brand-accent">
         {currentText}
         <span className="animate-pulse">|</span>
       </div>

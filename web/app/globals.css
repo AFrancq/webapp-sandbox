@@ -55,6 +55,14 @@ body {
 /* Utility classes for consistent colors */
 .bg-brand-primary { background-color: var(--primary); }
 .bg-brand-primary-dark { background-color: var(--primary-dark); }
+.bg-surface-dark { background-color: var(--surface-dark); }
+.bg-surface-medium { background-color: var(--surface-medium); }
+
 .text-brand-accent { color: var(--accent); }
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-emphasis { color: var(--text-emphasis); }
+
+/* Hover states */
+.hover\:bg-brand-primary-dark:hover { background-color: var(--primary-dark); }

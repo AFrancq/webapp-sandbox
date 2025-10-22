@@ -11,22 +11,13 @@ export default function SlideButton({ children, onClick, className = '' }: Slide
     <button
       onClick={onClick}
       className={`
-        group relative px-6 py-3 font-semibold rounded-lg 
+        group relative px-6 py-3 bg-brand-primary hover:bg-brand-primary-dark
+        text-primary font-semibold rounded-lg 
         transition-all duration-300 ease-in-out
         hover:translate-x-2 hover:shadow-lg
         flex items-center gap-2
         ${className}
       `}
-      style={{
-        backgroundColor: 'var(--primary)',
-        color: 'var(--text-primary)',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = 'var(--primary-dark)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = 'var(--primary)';
-      }}
     >
       <span className="transition-transform duration-300 group-hover:translate-x-1">
         {children}
