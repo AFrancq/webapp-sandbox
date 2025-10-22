@@ -7,6 +7,7 @@ export default function TypingAnimation() {
     "Quantum Programs",
     "Machine Learning",
     "Medical Schools",
+    "PhD Opportunities"
   ];
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);

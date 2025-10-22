@@ -11,7 +11,7 @@ export default function Home() {
           <TypingAnimation />
         </div>
         <div className="text-center">
-          <p className="text-secondary text-lg">Know where you're going</p>
+          <p className="text-secondary text-lg">Learn how to get where you're going</p>
         </div>
         <div>
           <SlideButton>Get Started</SlideButton>
