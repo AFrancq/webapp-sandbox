@@ -1,0 +1,62 @@
+import React, { useState, useEffect } from 'react';
+
+export default function TypingAnimation() {
+  const words = [
+    "Graduate Schools",
+    "Startup Incubators",
+    "Quantum Programs",
+    "Machine Learning",
+    "Medical Schools",
+  ];
+
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const word = words[currentWordIndex];
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        // Typing forward
+        if (currentText.length < word.length) {
+          setCurrentText(word.substring(0, currentText.length + 1));
+          setTypingSpeed(150);
+        } else {
+          // Finished typing, wait then start deleting
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Deleting
+        if (currentText.length > 0) {
+          setCurrentText(word.substring(0, currentText.length - 1));
+          setTypingSpeed(100);
+        } else {
+          // Finished deleting, move to next word
+          setIsDeleting(false);
+          setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentWordIndex, typingSpeed, words]);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800">
+      <div className="text-center">
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
+          RE: Search
+          <div className="text-blue-400">
+            {currentText}
+            <span className="animate-pulse">|</span>
+          </div>
+        </h1>
+        <p className="text-gray-400 text-lg">Know where you're going</p>
+      </div>
+    </div>
+  );
+}
