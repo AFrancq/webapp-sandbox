@@ -2,8 +2,12 @@
 
 import TypingAnimation from '@/components/typing';
 import SlideButton from '@/components/slide-button';
+import { useState } from 'react';
+
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="min-h-screen flex flex-col items-center justify-center gap-8">
