@@ -15,8 +15,8 @@
   --surface-medium: #1e293b; /* slate-800 */
   
   /* Text Colors */
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af; /* gray-400 */
+  --text-primary: #000000;
+  --text-secondary: #9ca3af1a; /* gray-400 */
   --text-muted: #6b7280;    /* gray-500 */
   --text-emphasis: #fbbf24;  /* yellow-400 */
 }

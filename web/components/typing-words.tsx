@@ -49,7 +49,7 @@ export default function TypingAnimation() {
   return (
     <h1 className="text-5xl md:text-7xl font-bold text-primary mb-4">
       <div className='justify-center flex'>
-        RE: Search
+        TBD
       </div>
       <div className="text-brand-accent">
         {currentText}
