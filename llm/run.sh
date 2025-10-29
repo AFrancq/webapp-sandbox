@@ -19,7 +19,30 @@ CONTAINER_PORT=11434
 DATA_DIR="$HOME/.ollama"
 NETWORK_NAME="re-search"
 USE_GPU=true  # Set to false to disable GPU
-MODEL_NAME="qwen3:8b"  # Default model to pull
+MODEL_NAME="qwen3:8b"  # Default to qwen3:8b, will be set by command line argument
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -m|--model)
+            MODEL_NAME="$2"
+            shift 2
+            ;;
+        -h|--help)
+            echo "Usage: $0 [OPTIONS]"
+            echo "Options:"
+            echo "  -m, --model MODEL    Specify model to pull (e.g., qwen3:8b)"
+            echo "  -h, --help          Show this help message"
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Use -h or --help for usage information"
+            exit 1
+            ;;
+    esac
+done
+
 
 # Create data directory if it doesn't exist
 mkdir -p $DATA_DIR

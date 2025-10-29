@@ -7,9 +7,23 @@ import { useState } from 'react';
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [goals, setGoals] = useState('');
+
+  const handleSubmit = () => {
+    // Handle form submission logic here
+    console.log('User Goals:', goals);
+  }
 
   const handleButtonClick = () => {
     setShowModal(true);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault(); // Prevent new line
+      handleSubmit();
+    }
+    // Shift+Enter will still create a new line (default behavior)
   };
 
   return (
@@ -25,14 +39,17 @@ export default function Home() {
                 <span>Your Goals:</span>
                 <textarea
                   className="w-full mt-1 p-2 rounded bg-slate-700 text-white border border-slate-600 focus:outline-none focus:ring-2 focus:ring-brand-primary"
-                  rows={4}
+                  rows={2}
                   placeholder="I want to attend graduate school for AI.."
+                  value={goals}
+                  onChange={(e) => setGoals(e.target.value)}
+                  onKeyDown={handleKeyDown}
                 ></textarea>
               </label>
             </form>
             <button
               onClick={() => setShowModal(false)}
-              className="bg-primary text-white px-4 py-2 rounded"
+              className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark"
             >
               Close
             </button>
