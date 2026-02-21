@@ -1,6 +1,6 @@
 # Web Application Sandbox
 
-A sandbox environment for experimenting with modern web frameworks and technologies. This project provides a foundation for prototyping new ideas and testing out different approaches to web development.
+A sandbox environment for experimenting with modern web frameworks and technologies. This project provides a foundation for prototyping new ideas and testing out different approaches to web development. Currently it uses React and Next.js for the frontend, and Ollama for LLM integration.
 
 ## Tech Stack
 
