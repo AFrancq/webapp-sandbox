@@ -1,6 +1,6 @@
 # Web Application Sandbox
 
-A sandbox environment for experimenting with modern web frameworks and technologies. This project provides a foundation for prototyping new ideas and testing out different approaches to web development. Currently it uses React and Next.js for the frontend, and Ollama for LLM integration.
+A sandbox environment for experimenting with modern web frameworks and technologies. This project provides a foundation for prototyping new ideas and testing out different approaches to web development. Currently it uses React and Next.js for the frontend, and Ollama for LLM integration. The LLM script is designed to run on both Nvidia and AMD GPUs and can be configured with command line parameters. While the front-end uses tailwind and framer for styling + animations.
 
 ## Tech Stack
 
